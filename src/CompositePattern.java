@@ -34,6 +34,14 @@ abstract class XML_Node {
 	public String genEndNode() {
 		return "</" + nodeName + "> \n";
 	}
+
+	public void addPostfix(TagNameVisitor visitor) {
+		visitor.addTagNamePostfix(this);
+	}
+
+	public void addPrefix(TagNameVisitor visitor) {
+		visitor.addTagNamePrefix(this);
+	}
 }
 
 class ParentXML_Node extends XML_Node {
@@ -67,14 +75,14 @@ class LeafXML_Node extends XML_Node {
 		xmlBuilder.append(genEndNode());
 		return xmlBuilder.toString();
 	}
-	
+
 	public String genStartNode() {
-		
-		return "\t"+super.genStartNode();
+
+		return "\t" + super.genStartNode();
 	}
 
 	public String genEndNode() {
-		return "\t"+super.genEndNode();
+		return "\t" + super.genEndNode();
 	}
 
 }
