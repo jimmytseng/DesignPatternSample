@@ -2,8 +2,14 @@
 public class MediatorPattern {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		MyHomeMemberMediatorImpl mediator = new MyHomeMemberMediatorImpl();
+		Father f = new Father(mediator);
+		Mother m = new Mother(mediator);
+		Child c = new Child(mediator);
+		mediator.setChild(c);
+		mediator.setMother(m);
+		mediator.setFather(f);
+		mediator.collecDishes();
 	}
 
 }
@@ -23,28 +29,43 @@ class MyHomeMemberMediatorImpl implements MemberMediator {
 	Mother mother;
 	Child child;
 
-	public MyHomeMemberMediatorImpl(Father father, Mother mother, Child child) {
+	public Father getFather() {
+		return father;
+	}
+
+	public void setFather(Father father) {
 		this.father = father;
+	}
+
+	public Mother getMother() {
+		return mother;
+	}
+
+	public void setMother(Mother mother) {
 		this.mother = mother;
+	}
+
+	public Child getChild() {
+		return child;
+	}
+
+	public void setChild(Child child) {
 		this.child = child;
 	}
 
 	@Override
 	public void collecDishes() {
-		// TODO Auto-generated method stub
-
+		this.mother.doCollect();
 	}
 
 	@Override
 	public void cleanDishes() {
-		// TODO Auto-generated method stub
-
+		this.father.doWash();
 	}
 
 	@Override
 	public void dryDishes() {
-		// TODO Auto-generated method stub
-
+		this.child.doDry();
 	}
 
 }
@@ -58,7 +79,8 @@ class Father {
 	MemberMediator mediator;
 
 	public void doWash() {
-		System.out.print(" father wash dishes ....");
+		System.out.println(" father wash dishes ....");
+		mediator.dryDishes();
 	}
 }
 
@@ -71,7 +93,8 @@ class Mother {
 	MemberMediator mediator;
 
 	public void doCollect() {
-		System.out.print(" mother collect dishes ....");
+		System.out.println(" mother collect dishes ....");
+		mediator.cleanDishes();
 	}
 
 }
@@ -85,6 +108,6 @@ class Child {
 	MemberMediator mediator;
 
 	public void doDry() {
-		System.out.print(" child dry dishes ....");
+		System.out.println(" child dry dishes ....");
 	}
 }
