@@ -1,87 +1,48 @@
-# DesignPatternSample
+# **DesignPattern 設計模式**
+作者: Tseng Shang Hsuan ( Jimmy Tseng https://github.com/jimmytseng)
 
-One Paragraph of project description goes here
+## 介紹
+Erich Gamma 等人 (四人幫, GoF)所提出並於1994年發表了物件導向程式的書籍：Design Patterns — Elements of Reusable Object-Oriented Software，而設計模式在軟體工程領域也隨之蓬勃發展。
 
-## Getting Started
+## 什麼是 Design Patterns
+身為一個物件導向程式開發人員，需要發揮出物件導向的優點，使我們的程式具備彈性、重複可用性與好維護。
+Design Pattern提供一個好的方案可以讓我們解決某種特定情境下(程式耦合度過高或是難以維護)的問題。
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+## 為何使用 Design Patterns
+#####1.重複可用性:讓我們藉由抽象層的概念使程式鬆耦合。
+#####2.共用語彙:Pattern提供了一個有意義的名稱，讓工程師們容易互相理解彼此所說或所遇到的問題。
+#####3.彈性:鬆耦合與高內聚讓我們程式修改容易，對於擴張開放。
 
-### Prerequisites
+## 如何選擇適當Pattern使用
 
-What things you need to install the software and how to install them
+##分類:設計模式可分成下列三大模式
+#####* 1.生成模式（Creational Patterns）
+	Abstract Factory 抽象工廠
+	Builder 
+	Factory Method 工廠方法
+	Prototype
+	Singleton
+#####* 2.結構模式（Structural Patterns）
+	Adapter 
+	Bridge
+	Composite
+	Decorator
+	Facade
+	Flyweight
+	Proxy
+#####* 3.行為模式（Behavioral Patterns）
+	Chain of Responsibility
+	Command
+	Interpreter
+	Iterator
+	Mediator 中介者
+	Memento
+	Observer	
+	State
+	Strategy
+	Template Method
+	Visitor
+## 開始學習
 
-```
-Give examples
-```
 
-### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
