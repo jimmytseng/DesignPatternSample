@@ -18,30 +18,30 @@ Design Pattern´£¨Ñ¤@­Ó¦nªº¤è®×¥i¥HÅý§Ú­Ì¸Ñ¨M¬YºØ¯S©w±¡¹Ò¤U(µ{¦¡½¢¦X«×¹L°ª©Î¬OÃø¥
 ## ¤ÀÃþ:³]­p¼Ò¦¡¥i¤À¦¨¤U¦C¤T¤j¼Ò¦¡
 ##### * 1.¥Í¦¨¼Ò¦¡¡]Creational Patterns¡^
 	Abstract Factory ©â¶H¤u¼t
-	Builder 
+	Builder «Ø³yªÌ¼Ò¦¡
 	Factory Method ¤u¼t¤èªk
-	Prototype
-	Singleton
+	Prototype ­ì«¬¼Ò¦¡
+	Singleton ³æ¨Ò¼Ò¦¡
 ##### * 2.µ²ºc¼Ò¦¡¡]Structural Patterns¡^
-	Adapter 
-	Bridge
-	Composite
-	Decorator
-	Facade
-	Flyweight
-	Proxy
+	Adapter Âà±µ¾¹¼Ò¦¡
+	Bridge ¾ô±µ¼Ò¦¡
+	Composite ½Æ¦X¼Ò¦¡
+	Decorator ¸Ë¹¢¼Ò¦¡
+	Facade ¥~Æ[¼Ò¦¡
+	Flyweight ¨É¤¸¼Ò¦¡
+	Proxy ¥N²z¼Ò¦¡
 ##### * 3.¦æ¬°¼Ò¦¡¡]Behavioral Patterns¡^
-	Chain of Responsibility
-	Command
-	Interpreter
-	Iterator
-	Mediator ¤¤¤¶ªÌ
-	Memento
-	Observer	
-	State
-	Strategy
-	Template Method
-	Visitor
+	Chain of Responsibility ³d¥ôÃì¼Ò¦¡
+	Command ©R¥O¼Ò¦¡
+	Interpreter ¸ÑÄ¶¾¹¼Ò¦¡
+	Iterator ­¡¥N¾¹¼Ò¦¡
+	Mediator ¤¤¤¶ªÌ¼Ò¦¡
+	Memento ³Æ§Ñ¿ý¼Ò¦¡
+	Observer	Æ[¹îªÌ¼Ò¦¡
+	State ª¬ºA¼Ò¦¡
+	Strategy µ¦²¤¼Ò¦¡
+	Template Method ½d¥»¤èªk¼Ò¦¡
+	Visitor ³X°ÝªÌ¼Ò¦¡
 ## ¶}©l¾Ç²ß
 
 
