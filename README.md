@@ -14,6 +14,7 @@ Design Pattern´£¨Ñ¤@­Ó¦nªº¤è®×¥i¥HÅý§Ú­Ì¸Ñ¨M¬YºØ¯S©w±¡¹Ò¤U(µ{¦¡½¢¦X«×¹L°ª©Î¬OÃø¥
 ##### 3.¼u©Ê:ÃP½¢¦X»P°ª¤º»EÅý§Ú­Ìµ{¦¡­×§ï®e©ö¡A¹ï©óÂX±i¶}©ñ¡C
 
 ## ¦p¦ó¿ï¾Ü¾A·íPattern¨Ï¥Î
+Design Patter¥i¤À¬°¤T¤j¼Ò²Õ¡A­º¥ý±N¿ë»{¹J¨ìªº±¡¹ÒÄÝ©ó­þ¤@¼Ò²Õ¡A±µµÛ¦A¿ï¾Ü¦X¾AªºPattern¨Ï¥Î¡C
 
 ## ¤ÀÃþ:³]­p¼Ò¦¡¥i¤À¦¨¤U¦C¤T¤j¼Ò¦¡
 ##### * 1.¥Í¦¨¼Ò¦¡¡]Creational Patterns¡^
@@ -37,7 +38,7 @@ Design Pattern´£¨Ñ¤@­Ó¦nªº¤è®×¥i¥HÅý§Ú­Ì¸Ñ¨M¬YºØ¯S©w±¡¹Ò¤U(µ{¦¡½¢¦X«×¹L°ª©Î¬OÃø¥
 	Iterator ­¡¥N¾¹¼Ò¦¡
 	Mediator ¤¤¤¶ªÌ¼Ò¦¡
 	Memento ³Æ§Ñ¿ý¼Ò¦¡
-	Observer	Æ[¹îªÌ¼Ò¦¡
+	Observer Æ[¹îªÌ¼Ò¦¡
 	State ª¬ºA¼Ò¦¡
 	Strategy µ¦²¤¼Ò¦¡
 	Template Method ½d¥»¤èªk¼Ò¦¡
