@@ -15,14 +15,14 @@ Design Pattern´£¨Ñ¤@­Ó¦nªº¤è®×¥i¥HÅý§Ú­Ì¸Ñ¨M¬YºØ¯S©w±¡¹Ò¤U(µ{¦¡½¢¦X«×¹L°ª©Î¬OÃø¥
 
 ## ¦p¦ó¿ï¾Ü¾A·íPattern¨Ï¥Î
 
-##¤ÀÃþ:³]­p¼Ò¦¡¥i¤À¦¨¤U¦C¤T¤j¼Ò¦¡
-#####* 1.¥Í¦¨¼Ò¦¡¡]Creational Patterns¡^
+## ¤ÀÃþ:³]­p¼Ò¦¡¥i¤À¦¨¤U¦C¤T¤j¼Ò¦¡
+##### * 1.¥Í¦¨¼Ò¦¡¡]Creational Patterns¡^
 	Abstract Factory ©â¶H¤u¼t
 	Builder 
 	Factory Method ¤u¼t¤èªk
 	Prototype
 	Singleton
-#####* 2.µ²ºc¼Ò¦¡¡]Structural Patterns¡^
+##### * 2.µ²ºc¼Ò¦¡¡]Structural Patterns¡^
 	Adapter 
 	Bridge
 	Composite
@@ -30,7 +30,7 @@ Design Pattern´£¨Ñ¤@­Ó¦nªº¤è®×¥i¥HÅý§Ú­Ì¸Ñ¨M¬YºØ¯S©w±¡¹Ò¤U(µ{¦¡½¢¦X«×¹L°ª©Î¬OÃø¥
 	Facade
 	Flyweight
 	Proxy
-#####* 3.¦æ¬°¼Ò¦¡¡]Behavioral Patterns¡^
+##### * 3.¦æ¬°¼Ò¦¡¡]Behavioral Patterns¡^
 	Chain of Responsibility
 	Command
 	Interpreter
