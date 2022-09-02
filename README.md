@@ -2,10 +2,10 @@
 作者: Tseng Shang Hsuan ( Jimmy Tseng https://github.com/jimmytseng)
 
 ## 介紹
-Erich Gamma 等人 (四人幫, GoF)所提出並於1994年發表了物件導向程式的書籍：Design Patterns — Elements of Reusable Object-Oriented Software，而設計模式在軟體工程領域也隨之蓬勃發展。
+Design Patter 由Erich Gamma 等人 (四人幫, GoF)所提出並於1994年發表了物件導向程式的書籍：Design Patterns — Elements of Reusable Object-Oriented Software，而設計模式在軟體工程領域也隨之蓬勃發展。
 
 ## 什麼是 Design Patterns
-身為一個物件導向程式開發人員，需要發揮出物件導向的優點，使我們的程式具備彈性、重複可用性與好維護。
+身為一個物件導向程式開發人員，需要發揮出物件導向的優點，使我們的程式具備彈性、重複可用性與好維護性。
 Design Pattern提供一個好的方案可以讓我們解決某種特定情境下(程式耦合度過高或是難以維護)的問題。
 
 ## 為何使用 Design Patterns
