@@ -43,7 +43,6 @@ Design Patter可分為三大模組，首先將辨認遇到的情境屬於哪一模組，接著再選擇合適的P
 	Strategy 策略模式
 	Template Method 範本方法模式
 	Visitor 訪問者模式
-## 開始學習
 
 
 
