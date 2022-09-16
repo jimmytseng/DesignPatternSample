@@ -1,4 +1,4 @@
-package BridgePattern;
+package StructuralPattern.BridgePattern;
 
 
 public class BridgePattern {

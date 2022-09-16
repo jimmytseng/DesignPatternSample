@@ -1,4 +1,4 @@
-package CompositePattern;
+package StructuralPattern.CompositePattern;
 
 import java.util.ArrayList;
 import java.util.List;

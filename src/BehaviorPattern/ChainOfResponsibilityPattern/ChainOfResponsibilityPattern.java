@@ -1,4 +1,4 @@
-package ChainOfResponsibilityPattern;
+package BehaviorPattern.ChainOfResponsibilityPattern;
 
 
 public class ChainOfResponsibilityPattern {

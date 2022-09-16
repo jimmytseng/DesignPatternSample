@@ -1,4 +1,4 @@
-package MediatorPattern;
+package BehaviorPattern.MediatorPattern;
 
 
 public class MediatorPattern {

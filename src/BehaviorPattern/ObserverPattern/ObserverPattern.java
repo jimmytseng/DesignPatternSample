@@ -1,4 +1,4 @@
-package ObserverPattern;
+package BehaviorPattern.ObserverPattern;
 
 import java.util.ArrayList;
 import java.util.List;

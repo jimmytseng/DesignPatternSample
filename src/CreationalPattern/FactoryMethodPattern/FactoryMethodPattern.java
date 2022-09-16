@@ -1,4 +1,4 @@
-package FactoryMethodPattern;
+package CreationalPattern.FactoryMethodPattern;
 
 import java.util.ArrayList;
 import java.util.HashMap;

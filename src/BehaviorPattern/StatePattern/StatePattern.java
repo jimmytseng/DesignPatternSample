@@ -1,4 +1,4 @@
-package StatePattern;
+package BehaviorPattern.StatePattern;
 
 
 public class StatePattern {

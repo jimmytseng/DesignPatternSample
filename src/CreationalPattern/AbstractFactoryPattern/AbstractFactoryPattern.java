@@ -1,4 +1,4 @@
-package AbstractFactoryPattern;
+package CreationalPattern.AbstractFactoryPattern;
 
 import java.util.ArrayList;
 import java.util.List;
