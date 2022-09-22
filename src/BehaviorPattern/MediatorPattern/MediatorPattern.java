@@ -5,20 +5,20 @@ public class MediatorPattern {
 
 	public static void main(String[] args) {
 		MyHomeMemberMediatorImpl mediator = new MyHomeMemberMediatorImpl();
-		Father f = new Father(mediator);
-		Mother m = new Mother(mediator);
-		Child c = new Child(mediator);
-		mediator.setChild(c);
-		mediator.setMother(m);
-		mediator.setFather(f);
-		mediator.collecDishes();
+		Father father = new Father(mediator);
+		Mother mother = new Mother(mediator);
+		Child child = new Child(mediator);
+		mediator.setChild(child);
+		mediator.setMother(mother);
+		mediator.setFather(father);
+		mediator.collectDishes();
 	}
 
 }
 
 interface MemberMediator {
 
-	public void collecDishes();
+	public void collectDishes();
 
 	public void cleanDishes();
 
@@ -56,7 +56,7 @@ class MyHomeMemberMediatorImpl implements MemberMediator {
 	}
 
 	@Override
-	public void collecDishes() {
+	public void collectDishes() {
 		this.mother.doCollect();
 	}
 
