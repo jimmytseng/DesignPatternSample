@@ -1,13 +1,15 @@
 package BehaviorPattern.MediatorPattern;
 
-
 public class MediatorPattern {
 
 	public static void main(String[] args) {
 		MyHomeMemberMediatorImpl mediator = new MyHomeMemberMediatorImpl();
-		Father father = new Father(mediator);
-		Mother mother = new Mother(mediator);
-		Child child = new Child(mediator);
+		Father father = new Father();
+		father.setMediator(mediator);
+		Mother mother = new Mother();
+		mother.setMediator(mediator);
+		Child child = new Child();
+		child.setMediator(mediator);
 		mediator.setChild(child);
 		mediator.setMother(mother);
 		mediator.setFather(father);
@@ -16,11 +18,15 @@ public class MediatorPattern {
 
 }
 
+interface Colleague {
+	public void setMediator(MemberMediator memberMediator);
+}
+
 interface MemberMediator {
 
 	public void collectDishes();
 
-	public void cleanDishes();
+	public void washDishes();
 
 	public void dryDishes();
 }
@@ -54,14 +60,14 @@ class MyHomeMemberMediatorImpl implements MemberMediator {
 	public void setChild(Child child) {
 		this.child = child;
 	}
-
+	
 	@Override
 	public void collectDishes() {
 		this.mother.doCollect();
 	}
 
 	@Override
-	public void cleanDishes() {
+	public void washDishes() {
 		this.father.doWash();
 	}
 
@@ -72,44 +78,49 @@ class MyHomeMemberMediatorImpl implements MemberMediator {
 
 }
 
-class Father {
-
-	public Father(MemberMediator mediator) {
-		this.mediator = mediator;
-	}
+class Father implements Colleague {
 
 	MemberMediator mediator;
+
+	@Override
+	public void setMediator(MemberMediator memberMediator) {
+		this.mediator = memberMediator;
+	}
 
 	public void doWash() {
 		System.out.println(" father wash dishes ....");
 		mediator.dryDishes();
 	}
+
 }
 
-class Mother {
-
-	public Mother(MemberMediator mediator) {
-		this.mediator = mediator;
-	}
+class Mother implements Colleague {
 
 	MemberMediator mediator;
+
+	@Override
+	public void setMediator(MemberMediator memberMediator) {
+		this.mediator = memberMediator;
+	}
 
 	public void doCollect() {
 		System.out.println(" mother collect dishes ....");
-		mediator.cleanDishes();
+		mediator.washDishes();
 	}
 
 }
 
-class Child {
+class Child implements Colleague {
 
-	public Child(MemberMediator mediator) {
-		this.mediator = mediator;
+	private MemberMediator mediator;
+
+	@Override
+	public void setMediator(MemberMediator memberMediator) {
+		this.mediator = memberMediator;
 	}
-
-	MemberMediator mediator;
 
 	public void doDry() {
 		System.out.println(" child dry dishes ....");
 	}
+
 }
