@@ -7,3 +7,7 @@
 
 # 如何使用
 ![ProxyPattern](ProxyPattern.jpg)
+
+# JDK Example
+•java.lang.reflect.Proxy  
+• java.rmi.*
