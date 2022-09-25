@@ -7,7 +7,6 @@ public class ChainOfResponsibilityPattern {
 		NumberHandler evenHandler = new EvenNumberHandler();
 		NumberHandler oddHandler = new OddNumberHandler();
 		evenHandler.setHandler(oddHandler);
-		oddHandler.setHandler(evenHandler);
 		evenHandler.print(7);
 	}
 
@@ -59,3 +58,4 @@ class OddNumberHandler implements NumberHandler {
 	}
 
 }
+
