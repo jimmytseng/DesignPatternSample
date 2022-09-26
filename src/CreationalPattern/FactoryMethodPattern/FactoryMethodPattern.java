@@ -8,29 +8,51 @@ import java.util.Map;
 public class FactoryMethodPattern {
 
 	public static void main(String args[]) {
-		GenSqlDTO genSqlDTO = new GenSqlDTO ();
+		GenSQLToolFactory genSQLToolFactory = new GenSQLToolFactoryImpl();
+		GenSqlDTO genSqlDTO = new GenSqlDTO();
 		genSqlDTO.setTableName("PERSONS");
 		ArrayList<String> columnList = new ArrayList();
 		columnList.add("account");
 		columnList.add("psw");
 		genSqlDTO.setColumnName(columnList);
-		GenSQL gen = GenSQL.getInstance(GenSQL.HIBERNATE_GEN, genSqlDTO);
+		GenSQLTool gen = genSQLToolFactory.getGenSQLTool(GenSQLTool.HIBERNATE_GEN, genSqlDTO);
 		System.out.print(gen.genSelect());
 	}
 }
 
-abstract class GenSQL {
+interface GenSQLToolFactory {
+	public GenSQLTool getGenSQLTool(String genType, GenSqlDTO dto);
+}
+
+class GenSQLToolFactoryImpl implements GenSQLToolFactory {
+
+	@Override
+	public GenSQLTool getGenSQLTool(String genType, GenSqlDTO dto) {
+		GenSQLTool genSQL = null;
+		switch (genType) {
+		case "NATIVE":
+			genSQL = new NativeGenSQL(dto);
+			break;
+		case "HIBERNATE":
+			genSQL = new HibernateGenSQL(dto);
+			break;
+		}
+		return genSQL;
+	}
+
+}
+
+abstract class GenSQLTool {
 
 	protected GenSqlDTO genSqlDTO;
 	public static String NATIVE_GEN = "NATIVE";
 	public static String HIBERNATE_GEN = "HIBERNATE";
 
-	public GenSQL(GenSqlDTO genSqlDTO) {
+	public GenSQLTool(GenSqlDTO genSqlDTO) {
 		this.genSqlDTO = genSqlDTO;
 	}
 
 	public String genSelect() {
-//		String tableName = this.genSqlDTO.getTableName();
 		List<String> columnNames = this.genSqlDTO.getColumnName();
 		StringBuilder builder = new StringBuilder();
 		builder.append(" select ");
@@ -55,22 +77,9 @@ abstract class GenSQL {
 
 	abstract public StringBuilder concateColumn(String column, StringBuilder builder);
 
-	public static GenSQL getInstance(String genType, GenSqlDTO dto) {
-		GenSQL genSQL = null;
-		switch (genType) {
-		case "NATIVE":
-			genSQL = new NativeGenSQL(dto);
-			break;
-		case "HIBERNATE":
-			genSQL = new HibernateGenSQL(dto);
-			break;
-		}
-		return genSQL;
-
-	}
 }
 
-class NativeGenSQL extends GenSQL {
+class NativeGenSQL extends GenSQLTool {
 
 	public NativeGenSQL(GenSqlDTO genSqlDTO) {
 		super(genSqlDTO);
@@ -78,19 +87,19 @@ class NativeGenSQL extends GenSQL {
 
 	@Override
 	public StringBuilder concateTable(StringBuilder builder) {
-		builder.append(" "+genSqlDTO.getTableName()+" ");
+		builder.append(" " + genSqlDTO.getTableName() + " ");
 		return builder;
 	}
 
 	@Override
 	public StringBuilder concateColumn(String column, StringBuilder builder) {
-		builder.append(" "+column+" ");
+		builder.append(" " + column + " ");
 		return builder;
 	}
 
 }
 
-class HibernateGenSQL extends GenSQL {
+class HibernateGenSQL extends GenSQLTool {
 
 	public HibernateGenSQL(GenSqlDTO genSqlDTO) {
 		super(genSqlDTO);
@@ -99,14 +108,14 @@ class HibernateGenSQL extends GenSQL {
 	@Override
 	public StringBuilder concateTable(StringBuilder builder) {
 		String alias = this.genSqlDTO.getTableName().toLowerCase();
-		builder.append(" "+genSqlDTO.getTableName()+" as "+alias);
+		builder.append(" " + genSqlDTO.getTableName() + " as " + alias);
 		return builder;
 	}
 
 	@Override
 	public StringBuilder concateColumn(String column, StringBuilder builder) {
 		String alias = this.genSqlDTO.getTableName().toLowerCase();
-		builder.append(" "+alias+"."+column+" ");
+		builder.append(" " + alias + "." + column + " ");
 		return builder;
 	}
 
