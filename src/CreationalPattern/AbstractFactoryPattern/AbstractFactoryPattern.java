@@ -6,91 +6,95 @@ import java.util.List;
 public class AbstractFactoryPattern {
 
 	public static void main(String[] args) {
-		TWBread bread = TWBreadFactory.getInstance("TypeA");
-		bread.addIngredient();
-		System.out.println("");
-		JapanBread jbread = JapanBreadFactory.getInstance("TypeB");
-		jbread.addIngredient();
+		BreadFactory breadFactory = new TWBreadFactory();
+		BananaBread bananaBread = breadFactory.getBananaBread();
+		bananaBread.addIngredient();
+		breadFactory = new JapanBreadFactory();
+		AppleBread appleBread = breadFactory.getAppleBread();
+		appleBread.addIngredient();
 	}
 
 }
 
-class TWBreadFactory {
+interface BreadFactory {
+	public BananaBread getBananaBread();
 
-	public static TWBread getInstance(String breadType) {
-		switch (breadType) {
-		case "TypeA":
-			return new TWBread_A();
-		case "TypeB":
-			return new TWBread_B();
-		}
-		return null;
+	public AppleBread getAppleBread();
+}
+
+interface BananaBread {
+	public void addIngredient();
+}
+
+interface AppleBread {
+	public void addIngredient();
+}
+
+class TWBreadFactory implements BreadFactory {
+
+	@Override
+	public BananaBread getBananaBread() {
+		return new TWBananaBread();
+	}
+
+	@Override
+	public AppleBread getAppleBread() {
+		return new TWAppleBread();
 	}
 }
 
-class JapanBreadFactory {
-	public static JapanBread getInstance(String breadType) {
-		switch (breadType) {
-		case "TypeA":
-			return new JapanBread_A();
-		case "TypeB":
-			return new JapanBread_B();
-		}
-		return null;
+class JapanBreadFactory implements BreadFactory {
+
+	@Override
+	public BananaBread getBananaBread() {
+		return new JapanBananaBread();
+	}
+
+	@Override
+	public AppleBread getAppleBread() {
+		return new JapanAppleBread();
 	}
 }
 
-interface TWBread {
-	public TWBread addIngredient();
-}
-
-class TWBread_A implements TWBread {
+class TWBananaBread implements BananaBread {
 
 	List<String> ingredient = new ArrayList<>();
 
-	public TWBread addIngredient() {
-		this.ingredient.add("TWBread_A add resource");
-		System.out.print("TWBread_A add resource");
-		return this;
+	public void addIngredient() {
+		this.ingredient.add("TWBananaBread add resource");
+		System.out.println("TWBananaBread add resource");
 	}
 }
 
-class TWBread_B implements TWBread {
+class TWAppleBread implements AppleBread {
 	List<String> ingredient = new ArrayList<>();
 
-	public TWBread addIngredient() {
-		this.ingredient.add("TWBread_B add resource");
-		System.out.print("TWBread_B add resource");
-		return this;
+	public void addIngredient() {
+		this.ingredient.add("TWAppleBread add resource");
+		System.out.println("TWAppleBread add resource");
 	}
 }
 
-interface JapanBread {
-	public JapanBread addIngredient();
-}
-
-class JapanBread_A implements JapanBread {
+class JapanBananaBread implements BananaBread {
 
 	List<String> ingredient = new ArrayList<>();
 
 	@Override
-	public JapanBread addIngredient() {
-		this.ingredient.add("JapanBread_A add resource");
-		System.out.print("JapanBread_A add resource");
-		return this;
+	public void addIngredient() {
+		this.ingredient.add("JapanBananaBread add resource");
+		System.out.println("JapanBananaBread add resource");
 	}
 
 }
 
-class JapanBread_B implements JapanBread {
+class JapanAppleBread implements AppleBread {
 
 	List<String> ingredient = new ArrayList<>();
 
 	@Override
-	public JapanBread addIngredient() {
-		this.ingredient.add("JapanBread_B add resource");
-		System.out.print("JapanBread_B add resource");
-		return this;
+	public void addIngredient() {
+		this.ingredient.add("JapanAppleBread add resource");
+		System.out.println("JapanAppleBread add resource");
 	}
 
 }
