@@ -4,7 +4,7 @@ package BehaviorPattern.StatePattern;
 public class StatePattern {
 
 	public static void main(String[] args) {
-		TraficLight light = new TraficLight();
+		TrafficLight light = new TrafficLight();
 		while (true) {
 			light.changeLight();
 		}
@@ -27,9 +27,9 @@ public class StatePattern {
 	}
 
 	class RedState implements LightState {
-		private TraficLight light;
+		private TrafficLight light;
 
-		RedState(TraficLight light) {
+		RedState(TrafficLight light) {
 			this.light = light;
 		}
 
@@ -43,9 +43,9 @@ public class StatePattern {
 	}
 
 	class GreenState implements LightState {
-		private TraficLight light;
+		private TrafficLight light;
 
-		GreenState(TraficLight light) {
+		GreenState(TrafficLight light) {
 			this.light = light;
 		}
 
@@ -59,9 +59,9 @@ public class StatePattern {
 	}
 
 	class YellowState implements LightState {
-		private TraficLight light;
+		private TrafficLight light;
 
-		YellowState(TraficLight light) {
+		YellowState(TrafficLight light) {
 			this.light = light;
 		}
 
@@ -74,7 +74,7 @@ public class StatePattern {
 
 	}
 
-class TraficLight {
+class TrafficLight {
 	
 
 	public LightState yellowLight = new YellowState(this);
