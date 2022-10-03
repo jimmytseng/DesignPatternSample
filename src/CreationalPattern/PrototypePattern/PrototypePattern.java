@@ -4,7 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PrototypePattern {
-
+	public static void main(String[] args) {
+		AccessControl userAccessControl = AccessControlProvider.getAccessControlObject("user");
+		System.out.println("AccessControlLevel:" + userAccessControl.getControlLevel());
+	}
 }
 
 interface Prototype extends Cloneable {
