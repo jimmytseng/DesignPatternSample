@@ -8,12 +8,12 @@ public class ObserverPattern {
 	public static void main(String[] args) {
 		Observable commentary = new Commentary();
 		Observer radioObserver = new RadioObserver(commentary);
-		Observer radioObserver1 = new RadioObserver(commentary);
+		Observer youtubeObserver = new RadioObserver(commentary);
 		radioObserver.subscribe();
-		radioObserver1.subscribe();
+		youtubeObserver.subscribe();
 		commentary.setLiveStr("Game kick off");
 		commentary.setLiveStr("Barcelona goal!!");
-		radioObserver1.unsubscribe();
+		youtubeObserver.unsubscribe();
 		commentary.setLiveStr("Mache goal 1-1 !!");
 	}
 
