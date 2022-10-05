@@ -1,4 +1,4 @@
-package VisitorPattern;
+package BehaviorPattern.VisitorPattern;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,35 +6,48 @@ import java.util.List;
 public class VisitorPattern {
 
 	public static void main(String[] args) {
-		TagNameVisitor visitor = new TagNameVisitorImpl();
+		TagNameVisitor postfixVisitor = new PostfixNameVisitorImpl();
+		TagNameVisitor prefixVisitor = new PrefixNameVisitorImpl();
+
 		ParentXML_Node parent_node = new ParentXML_Node();
 		parent_node.setNodeName("ParentNode");
 		LeafXML_Node leaf_node = new LeafXML_Node();
 		leaf_node.setNodeName("LeafNode");
-		leaf_node.addPostfix(visitor);
+		leaf_node.accept(postfixVisitor);
 		parent_node.getChildNode().add(leaf_node);
-		parent_node.addPrefix(visitor);
+		parent_node.accept(prefixVisitor);
 		System.out.println(parent_node.genXML());
 	}
 }
 
 interface TagNameVisitor {
+	public void accept(ParentXML_Node parentNode);
 
-	public void addTagNamePostfix(XML_Node node);
+	public void accept(LeafXML_Node leafNode);
 
-	public void addTagNamePrefix(XML_Node node);
 }
 
-class TagNameVisitorImpl implements TagNameVisitor {
-
+class PostfixNameVisitorImpl implements TagNameVisitor {
 	@Override
-	public void addTagNamePostfix(XML_Node node) {
-		node.setNodeName(node.getNodeName() + "_MyPostfix");
+	public void accept(ParentXML_Node parentNode) {
+		parentNode.setNodeName(parentNode.getNodeName() + "_MyPostfix(parentNode)");
 	}
 
 	@Override
-	public void addTagNamePrefix(XML_Node node) {
-		node.setNodeName("MyPrefix_" + node.getNodeName());
+	public void accept(LeafXML_Node leafNode) {
+		leafNode.setNodeName(leafNode.getNodeName() + "_MyPostfix(leafNode)");
+	}
+}
+
+class PrefixNameVisitorImpl implements TagNameVisitor {
+	@Override
+	public void accept(ParentXML_Node parentNode) {
+		parentNode.setNodeName("MyPrefix_(parentNode)" + parentNode.getNodeName());
+	}
+
+	@Override
+	public void accept(LeafXML_Node leafNode) {
+		leafNode.setNodeName("MyPrefix_(parentNode)" + leafNode.getNodeName());
 	}
 }
 
@@ -59,6 +72,9 @@ abstract class XML_Node {
 	public String genEndNode() {
 		return "</" + nodeName + "> \n";
 	}
+
+	public abstract void accept(TagNameVisitor visitor);
+
 }
 
 class ParentXML_Node extends XML_Node {
@@ -81,6 +97,11 @@ class ParentXML_Node extends XML_Node {
 		xmlBuilder.append(genEndNode());
 		return xmlBuilder.toString();
 	}
+
+	@Override
+	public void accept(TagNameVisitor visitor) {
+		visitor.accept(this);
+	}
 }
 
 class LeafXML_Node extends XML_Node {
@@ -94,12 +115,16 @@ class LeafXML_Node extends XML_Node {
 	}
 
 	public String genStartNode() {
-
 		return "\t" + super.genStartNode();
 	}
 
 	public String genEndNode() {
 		return "\t" + super.genEndNode();
+	}
+
+	@Override
+	public void accept(TagNameVisitor visitor) {
+		visitor.accept(this);
 	}
 
 }
