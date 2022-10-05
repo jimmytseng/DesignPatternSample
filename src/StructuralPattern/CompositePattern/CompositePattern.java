@@ -36,14 +36,6 @@ abstract class XML_Node {
 	public String genEndNode() {
 		return "</" + nodeName + "> \n";
 	}
-
-	public void addPostfix(TagNameVisitor visitor) {
-		visitor.addTagNamePostfix(this);
-	}
-
-	public void addPrefix(TagNameVisitor visitor) {
-		visitor.addTagNamePrefix(this);
-	}
 }
 
 class ParentXML_Node extends XML_Node {
